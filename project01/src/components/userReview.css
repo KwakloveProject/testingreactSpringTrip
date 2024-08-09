@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
+.userReview .readImage{
+width: 700px;
+
+}
+.userReview .star-rating {
+    display: flex;
+    direction: row;
+}   
+
+.userReview .star-rating button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.userReview .star-rating .on .star {
+    color: gold;
+}
+
+.userReview .star-rating .off .star {
+    color: grey;
+}
+.userReview .starHeart{
+    display: flex;
+    
+}
+.userReview .read{
+    /* border: 1px solid black; */
+width: 700px;
+margin:  0 auto;
+font-family: "Do Hyeon", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+}
+.userReview .readImage{
+    border-radius: 5px;
+}
+.userReview .reviewInfo{
+    width: 338px;
+    word-wrap:break-word;
+    
+}
+.userReview .subImage{
+    border-radius: 5px;
+    width: 338px;
+    /* border:  1px solid black; */
+    
+}
+.userReview .subshowlist2{
+
+  
+    margin-left: 20px;
+    }
+.userReview .subImage2{
+    border-radius: 5px;
+    width: 338px;
+
+}
+.userReview .subImageGroup{
+ 
+    display: flex;
+}

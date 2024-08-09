@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
+/* 전체 컨테이너 스타일 */
+.foodread {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    font-family: "Do Hyeon", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+/* 폼 컨테이너 스타일 */
+.foodread .read {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+/* 이미지 스타일 */
+.foodread .readImage {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 별점 및 하트 버튼 컨테이너 스타일 */
+.foodread .starHeart {
+    margin: 20px 0;
+}
+
+/* 별점 버튼 스타일 */
+.foodread .star-rating {
+    display: flex;
+    justify-content: center;
+}
+
+/* 음식 사진 그룹 */
+.foodread .foodImageMainGroup {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* 음식 사진 그룹 개별 스타일 */
+.foodread .foodImageGroup1,
+.foodread .foodImageGroup2,
+.foodread .foodImageGroup3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+.foodread .foodImage1,
+.foodread .foodImage2,
+.foodread .foodImage3 {
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+}
+
+/* 음식 정보 스타일 */
+.foodread .foodInfo {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* 기본정보 맵 및 정보 컨테이너 스타일 */
+.foodread .foodMap {
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.foodread .foodMapImage {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.foodread .foodMapInfo {
+    margin-top: 10px;
+}
+
+/* 버튼 스타일 */
+.foodread button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.foodread button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,8 @@
+.app {
+    text-align: center;
+    margin: 0 auto;
+    width: 65%;
+    min-height: 80vh;
+    justify-content: center;
+    color: black;
+  }

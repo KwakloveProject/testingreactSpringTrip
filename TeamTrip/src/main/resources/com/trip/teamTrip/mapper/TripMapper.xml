@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.trip.teamTrip.mapper.TripMapper">
+
+  <insert id="insert">
+    INSERT INTO trip (
+            no,
+            title,
+            englishTitle,
+            titleImg,
+            topic,
+            content,
+            sub1Img,
+            sub1Topic,
+            sub1Content,
+            sub2TitleImg,
+            sub2Topic,
+            sub2Content,
+            mapImg,
+            address,
+            phoneNumber
+        ) VALUES (
+            trip_seq.NEXTVAL,
+            #{title},
+            #{englishTitle},
+            #{titleImg},
+            #{topic},
+            #{content},    
+            #{sub1Img},
+            #{sub1Topic},
+            #{sub1Content},
+            #{sub2TitleImg},
+            #{sub2Topic},
+            #{sub2Content},
+            #{mapImg},
+            #{address},
+            #{phoneNumber}
+        )
+    </insert>
+<select id="detail" >
+    SELECT 
+        no,
+        title,
+        englishTitle,
+        titleImg,
+        topic,
+        content,
+        sub1Img,
+        sub1Topic,
+        sub1Content,
+        sub2TitleImg,
+        sub2Topic,
+        sub2Content,
+        mapImg,
+        address,
+        phoneNumber
+    FROM trip
+    WHERE no = #{no}
+</select>
+
+<select id="list">
+SELECT no,
+        title,
+        englishTitle,
+        titleImg,
+        topic,
+        content,
+        sub1Img,
+        sub1Topic,
+        sub1Content,
+        sub2TitleImg,
+        sub2Topic,
+        sub2Content,
+        mapImg,
+        address,
+        phoneNumber
+FROM trip
+ORDER BY no
+FETCH FIRST 4 ROWS ONLY
+
+
+
+</select>
+
+
+<update id="update" >
+    UPDATE trip
+    SET
+        title = #{title},
+        englishTitle = #{englishTitle},
+        topic = #{topic},
+        content = #{content},
+        sub2TitleImg = COALESCE(#{sub2TitleImg}, sub2TitleImg),
+        sub1Topic = #{sub1Topic},
+        sub1Content = #{sub1Content},
+        sub2Topic = #{sub2Topic},
+        sub2Content = #{sub2Content},
+        titleImg = COALESCE(#{titleImg}, titleImg),
+        sub1Img = COALESCE(#{sub1Img}, sub1Img),
+        mapImg = COALESCE(#{mapImg}, mapImg),
+        address = #{address},
+        phoneNumber = #{phoneNumber}
+    WHERE no = #{no, jdbcType=INTEGER}
+</update>
+
+  <!-- Delete a restaurant -->
+    <delete id="delete">
+        DELETE FROM trip
+        WHERE no = #{no, jdbcType=INTEGER}
+    </delete>
+    
+    
+<select id="filename">
+SELECT titleImg, sub1Img, sub2TitleImg, mapImg 
+FROM trip 
+WHERE no = #{no, jdbcType=INTEGER}
+</select>
+
+</mapper>

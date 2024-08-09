@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.trip.teamTrip.mapper.RestaurantMapper">
+
+    <!-- Insert a new restaurant -->
+    <insert id="insert">
+    INSERT INTO restaurant (
+    	no,
+        title,
+        englishTitle,
+        titleImg,
+        topic,
+        sub1Img,
+        sub1Topic,
+        sub1Content,
+        sub2TitleImg,
+        sub2Topic,
+        sub2Content,
+        sub3TitleImg,
+        sub3Topic,
+        sub3Content,
+        mapImg,
+        address,
+        phoneNumber
+    ) VALUES (
+    	restaurant_seq.NEXTVAL,
+        #{title},
+        #{englishTitle},
+        #{titleImg},
+        #{topic},
+        #{sub1Img},
+        #{sub1Topic},
+        #{sub1Content},
+        #{sub2TitleImg},
+        #{sub2Topic},
+        #{sub2Content},
+        #{sub3TitleImg},
+        #{sub3Topic},
+        #{sub3Content},
+        #{mapImg},
+        #{address},
+        #{phoneNumber}
+    )
+</insert>
+
+    <!-- List all restaurant -->
+<select id="list">
+SELECT *
+FROM restaurant
+ORDER BY no
+FETCH FIRST 4 ROWS ONLY
+
+</select>
+    <!-- Delete a restaurant -->
+    <delete id="delete">
+        DELETE FROM restaurant
+        WHERE no = #{no, jdbcType=INTEGER}
+    </delete>
+
+    <!-- Get details of a restaurant -->
+    <select id="detail">
+        SELECT
+           *
+        FROM
+            restaurant
+        WHERE
+            no = #{no}
+    </select>
+    
+
+    <!-- Update Query -->
+<update id="update">
+    UPDATE restaurant
+    SET
+        title = #{title},
+        englishTitle = #{englishTitle},
+        titleImg = COALESCE(#{titleImg}, titleImg),
+        topic = #{topic},
+        sub1Img = COALESCE(#{sub1Img}, sub1Img),
+        sub1Topic = #{sub1Topic},
+        sub1Content = #{sub1Content},
+        sub2TitleImg = COALESCE(#{sub2TitleImg}, sub2TitleImg),
+        sub2Topic = #{sub2Topic},
+        sub2Content = #{sub2Content},
+        sub3TitleImg = COALESCE(#{sub3TitleImg}, sub3TitleImg),
+        sub3Topic = #{sub3Topic},
+        sub3Content = #{sub3Content},
+        mapImg = COALESCE(#{mapImg}, mapImg),
+        address = #{address},
+        phoneNumber = #{phoneNumber}
+        
+    WHERE no = #{no, jdbcType=INTEGER}
+</update>
+
+
+<select id="filename">
+SELECT titleImg, sub1Img, sub2TitleImg, sub3TitleImg, mapImg 
+FROM restaurant 
+WHERE no = #{no, jdbcType=INTEGER}
+</select>
+    
+
+</mapper>

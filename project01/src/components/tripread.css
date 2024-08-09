@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+h1,h2,h3,h4,h5,p,span{
+    word-wrap:break-word;
+    
+}
+.tripread .readImage{
+width: 700px;
+
+}
+.tripread .star-rating {
+    display: flex;
+    direction: row;
+}   
+
+.tripread .star-rating button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.tripread .star-rating .on .star {
+    color: gold;
+}
+
+.tripread .star-rating .off .star {
+    color: grey;
+}
+.tripread .starHeart{
+    display: flex;
+    
+}
+.tripread .read{
+width: 700px;
+margin:  0 auto;
+font-family: "Do Hyeon", sans-serif;
+font-weight: 400;
+white-space: normal;
+
+}
+.tripread .tripInfo{
+  
+word-wrap:break-word;
+
+
+}
+.tripread .tripInfo2{
+   
+    width: 338px;
+word-wrap:break-word;
+
+
+}
+
+.tripread .readImage{
+    border-radius: 5px;
+}
+.tripread .subImage{
+    border-radius: 5px;
+    width: 338px;
+    
+}
+
+.tripread .subshowlist2{
+
+    margin-left: 20px;
+    }
+.tripread .subImage2{
+    border-radius: 5px;
+    width: 338px;
+
+}
+.tripread .subImageGroup{
+ 
+    display: flex;
+}
+.tripread .mapImage{
+    border-radius: 5px;
+    width: 700px;
+}
+.tripread .mapInfo{
+
+border: 1px solid #FFFFFF;
+border-radius: 5px;
+margin-top: 10px;
+
+
+
+}

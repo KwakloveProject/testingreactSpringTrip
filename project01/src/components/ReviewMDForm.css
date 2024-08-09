@@ -1,0 +1,98 @@
+.ReviewMDForm .body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.ReviewMDForm .form-container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;    
+}
+
+.ReviewMDForm .h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.ReviewMDForm .form-group {
+    margin-bottom: 20px;
+}
+
+.ReviewMDForm .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+}
+
+.ReviewMDForm .form-group input[type="text"],
+.ReviewMDForm .form-group input[type="file"],
+.ReviewMDForm .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+.ReviewMDForm .form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.ReviewMDForm .subImageGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.ReviewMDForm .subImageGroup .subshowlist,
+.ReviewMDForm .subImageGroup .subshowlist2 {
+    flex: 1;
+    min-width: 300px;
+}
+
+
+.ReviewMDForm .h3 {
+    color: #444;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.ReviewMDForm .submit-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ReviewMDForm .button {
+    width: 100%;
+    margin: 0 auto;
+    height: 70%;
+    
+}
+.ReviewMDForm .custom-button {
+    border: 1px solid black;
+    width: 33%;
+    margin: 0 auto;
+    
+}

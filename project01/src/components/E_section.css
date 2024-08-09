@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
+.E_section .carousel-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: "Do Hyeon", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.E_section .carousel {
+    width: 100%;
+    height: 500px; /* 고정된 높이 */
+}
+
+.E_section .carousel-item {
+    width: 100%;
+    overflow: hidden; /* 넘치는 부분을 숨기기 */
+}
+
+.E_section .carousel-item img {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지가 컨테이너를 덮도록 맞추기 */
+}
+
+.E_section .carousel-caption-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+    pointer-events: none; /* 클릭 불가 상태로 설정 */
+}
+
+/* 반응형 스타일링 */
+@media (max-width: 600px) {
+    .E_section .carousel-container {
+        max-width: 100%;
+    }
+    .E_section .carousel {
+        height: auto;
+    }
+    .E_section .carousel-item {
+        height: auto;
+    }
+    .E_section .carousel-item img {
+        max-height: 300px; /* 작은 화면에서 이미지 높이를 조정 */
+    }
+
+    .E_section #infoTitle {
+        width: 100%;
+    }
+
+    .E_section .tenList {
+        position: static;
+        height: auto;
+        padding: 20px;
+        border-radius: 0;
+        background: none;
+    }
+
+    .E_section .tenList table {
+        display: block;
+    }
+
+    .E_section .list1 {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .E_section .image1 {
+        width: 100%;
+        height: auto;
+    }
+
+    .E_section .TravelingReviewMain {
+        flex-direction: column;
+    }
+
+    .E_section .TravelingReview, .E_section .TravelingReview2 {
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+
+    .E_section .image2, .E_section .image3 {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.E_section #infoTitle {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* top10리스트 */
+.E_section .tenList {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25%; /* 캐러셀의 4분의 1 높이 */
+    background: rgba(255, 255, 255, 0.9); /* 반투명 배경 */
+    padding: 10px;
+    
+    z-index: 20;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap; /* 항목들이 줄바꿈될 수 있도록 설정 */
+    gap: 10px; /* 항목 간의 간격 */
+    margin: 0 auto;
+    max-width: 800px; /* 최대 너비를 설정하여 중앙 정렬 */
+    padding: 10px;
+    box-sizing: border-box;
+    
+}
+.tenList .item {
+    flex: 1 1 calc(50% - 10px); /* 두 개의 항목이 가로로 배치되도록 설정, 간격을 제외한 너비 */
+    box-sizing: border-box;
+}
+.E_section .tenList table {
+    width: 100%;
+}
+
+.E_section .tenList h4, .E_section .tenList p {
+    padding: 0;
+    white-space: normal; /* 텍스트가 줄 바꿈될 수 있도록 설정 */
+    word-break: break-all; /* 단어 단위로 줄 바꿈을 방지 */
+}
+
+.E_section .image1 {
+    width: 180px;
+    height: 180px;
+    border-radius: 5px; /* 이미지 모서리 둥글게 설정 (옵션) */
+}
+
+.E_section .list1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd; /* 테두리 설정 (옵션) */
+    border-radius: 5px; /* 모서리 둥글게 설정 (옵션) */
+    padding: 10px;
+    background-color: #fff; /* 배경색 설정 (옵션) */
+}
+
+.E_section .list1-2 {
+    width: 320px;
+    text-align: center;
+    color: black;
+    white-space: normal; /* 텍스트가 줄 바꿈될 수 있도록 설정 */
+    word-break: break-all; /* 단어 단위로 줄 바꿈을 방지 */
+}
+/* 반응형 스타일링 */
+@media (max-width: 600px) {
+    .tenList .item {
+        flex: 1 1 100%; /* 작은 화면에서는 항목이 전체 너비를 차지하도록 설정 */
+    }
+}
+.E_section .image2, .E_section .image3 {
+    width: 380px;
+    height: 240px;
+    border-radius: 5px;
+}
+
+.E_section .link{
+    text-decoration:none
+}
+
+
+
+
+.E_section .TravelingReviewMain {
+    display: flex;
+}
+
+.E_section .TravelingReview, .E_section .TravelingReview2 {
+    width: 380px;
+}
+
+.E_section .TravelingReview2 {
+    margin-left: 10px;
+}

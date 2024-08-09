@@ -1,0 +1,133 @@
+import  {useRef,useEffect,useState} from "react"; 
+import { useNavigate,useParams } from "react-router"; 
+import './tripread.css';
+
+
+function useFetch(url){ 
+const [data,setData]=useState(null); 
+  const [loading,setLoading]=useState(true); 
+  useEffect(()=>{ 
+      fetch(url) 
+      .then(response => { 
+          return response.json(); 
+      }) 
+      .then(data=>{ 
+          setData(data); 
+          setLoading(false); 
+      }); 
+  },[]); 
+  return [data,loading]; 
+}
+
+const TripRead = () => {
+  const {no}=useParams(); 
+  const [data,loading]=useFetch('http://localhost:8080/product/detail/'+product_code); 
+  const navigate = useNavigate();
+  const title = useRef();
+  const englishTitle = useRef();
+  const titleImg = useRef();
+  const topic = useRef();
+  const content = useRef();
+  const sub1Img = useRef();
+  const sub1Topic = useRef();
+  const sub1Content = useRef();
+  const sub2TitleImg = useRef();
+  const sub2Topic = useRef();
+  const sub2Content = useRef();
+  const mapImg=useRef();
+  const address=useRef();
+  const phoneNumber=useRef();
+
+
+
+  if(loading){ 
+      return (<div>loading</div>) 
+  }else{ 
+      let src=''; 
+      let image_url=''; 
+      if(data.FILENAME !== '-'){ 
+          src=`http://localhost:8080/static/images/${data.FILENAME}`; 
+          image_url=`<img src=${src} width='300px' height='300px'/>`; 
+      }else{ 
+          image_url=''; 
+      } 
+  return (
+    <div className='tripread'>
+
+    <div className='read'>
+    <h1>{title}</h1>
+    <p>{englishTitle}</p>
+    <img src={titleImg} className='readImage'>
+    </img>
+  
+   
+ 
+    <div className='tripInfo'>
+      <br/>
+
+ <h4>{topic} </h4>
+<h5>
+ 성당을 형형색색으로 물들이는 가톨릭 관련 행사가 펼쳐지는 곳동방 박
+ 사 퍼레이드가 열리는 주현절과 더불어, 부활절 종교 행사 세미나 산타, 
+ 형형색색의 조명이 장식되는 크리스마스 축제 등 가톨릭 신자가 많은 스페인을
+ 인답게 다양한 종교 행사가 진행된다. 특히 예수의 성체를 기리는 코르퍼스 
+ 크리스티 축제는 이곳의 가장 중요한 행사인 만큼 거대한 제단이 움직이는
+  퍼레이드가 펼쳐지며, 행렬이 지나가는 거리 곳곳의 발코니와 창문은 꽃으로
+   화려하게 장식된다. 이외에도 매년 다채로운 볼거리가 가득하니 일정에 맞춰 방문해보는 것을 추천한다.
+ </h5>
+
+    </div>
+          <h3>주요 볼거리</h3>
+          <div className='subImageGroup'>
+
+          <div className='subshowlist'>
+            <img src='https://media.triple.guide/triple-cms/c_limit,f_auto,h_1280,w_1280/fb0a8a93-b5a8-407e-a617-74f98ee387bc.jpeg' className='subImage'>
+            </img>
+            <div className='tripInfo2'>
+              <h4>황금 제단</h4>
+            <p>
+              예수의 삶을 36개의 장면으로 묘사한 성화(聖畫)와
+              1.5톤의 황금 예수상이 자리한 제단
+              </p>
+          </div>
+          </div>
+          <div className='subshowlist2'>
+            <img src='https://media.triple.guide/triple-cms/c_limit,f_auto,h_1280,w_1280/a6a7f241-e4d1-465f-b241-98994ee42952.jpeg' className='subImage2'></img>
+            <div className='tripInfo2'>
+
+            <h4>콜럼버스의 관</h4>
+            <span>
+            스페인을 통치한 네 명의 왕이 떠받들고 있는 이탈리아 
+            탐험가 크리스토퍼 콜럼버스의 관
+            </span>
+          </div>
+            </div>
+
+          </div>
+            <h3>기본정보</h3>
+            <img src='https://triple.guide/api/maps/static-map?size=700x420&scale=1&center=37.3858247%2C-5.9931068&zoom=13' className='mapImage'> 
+            </img>
+            <div className='mapInfo'>
+            <div className='tripInfo'> 
+            <span> 
+            주소:  Av. de la Constitución, s/n, 41004 Sevilla, Spain
+            </span>
+            <br/>
+            <span>
+            전화: 34902099692
+            </span>
+            <br/>
+            <span>
+            홈페이지
+            https://www.catedraldesevilla.es/
+            </span>
+            </div>
+</div>
+
+    </div>
+</div>
+  );
+}
+}
+
+export default TripRead;
